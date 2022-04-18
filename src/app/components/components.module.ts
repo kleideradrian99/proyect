@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ListEmployeeComponent } from './list-employee/list-employee.component';
+import { CreateEmployeeComponent } from "./create-employee/CreateEmployeeComponent";
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    ListEmployeeComponent,
+    CreateEmployeeComponent,
   ],
   exports: [
     FooterComponent,
