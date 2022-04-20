@@ -9,6 +9,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { CreateEmployeeComponent } from '../../create-employee/CreateEmployeeComponent';
+import { ListProductsComponent } from 'app/products/list-products/list-products.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -54,6 +55,7 @@ export const AdminLayoutRoutes: Routes = [
     //     }]
     // }
     { path: 'dashboard',      component: DashboardComponent },
+    { path: 'product-list',   component: ListProductsComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },
