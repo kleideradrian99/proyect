@@ -6,7 +6,7 @@
             </div>
             <div class="card-body">
                 <div class="col-md-12">
-                    <button class="btn btn-dark btn-lg float-right" style="padding: 1rem;">Agregar</button>
+                    <button class="btn btn-dark btn-lg float-right" style="padding: 1rem;" routerLink="/create-product">Agregar</button>
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
@@ -23,6 +23,12 @@
                                         </th>
                                         <th>
                                             Talla
+                                        </th>
+                                        <th>
+                                            Descripción
+                                        </th>
+                                        <th>
+                                            Categoria
                                         </th>
                                         <th>
                                             Opciones
@@ -42,8 +48,15 @@
                                             <td>
                                                 Oud-Turnhout
                                             </td>
+                                            <td>
+                                                Oud-Turnhout
+                                            </td>
+                                            <td>
+                                                Oud-Turnhout
+                                            </td>
                                             <td class="text-primary">
-                                                $36,738
+                                                <img src="https://incontactostorageprod.blob.core.windows.net/subirm/16504985398181650498539818.png" style="width: 25px;margin-right: 1rem;" alt="">
+                                                <img src="https://incontactostorageprod.blob.core.windows.net/subirm/16504986570091650498657009.png" style="width: 25px;" alt="">
                                             </td>
                                         </tr>
                                         <tr>
@@ -59,12 +72,24 @@
                                             <td>
                                                 Sinaai-Waas
                                             </td>
+                                            <td>
+                                                Oud-Turnhout
+                                            </td>
+                                            <td>
+                                                Oud-Turnhout
+                                            </td>
                                             <td class="text-primary">
-                                                $23,789
+                                                <img src="https://incontactostorageprod.blob.core.windows.net/subirm/16504985398181650498539818.png" style="width: 25px;margin-right: 1rem;" alt="">
+                                                <img src="https://incontactostorageprod.blob.core.windows.net/subirm/16504986570091650498657009.png" style="width: 25px;" alt="">
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
+                                <ul>
+                                    <li class="text" *ngFor="let item of items | async">
+                                        {{item.name}}
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

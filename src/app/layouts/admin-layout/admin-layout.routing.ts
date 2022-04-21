@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { CreateEmployeeComponent } from '../../create-employee/CreateEmployeeComponent';
 import { ListProductsComponent } from 'app/products/list-products/list-products.component';
+import { CreateProductsComponent } from 'app/products/create-products/create-products.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -56,6 +57,7 @@ export const AdminLayoutRoutes: Routes = [
     // }
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'product-list',   component: ListProductsComponent },
+    { path: 'create-product',   component: CreateProductsComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },
