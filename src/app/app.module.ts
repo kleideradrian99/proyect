@@ -11,8 +11,11 @@ import { ListProductsComponent } from './products/list-products/list-products.co
 import { CreateProductsComponent } from './products/create-products/create-products.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
+
+// Modulos Firebase
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   imports: [
@@ -24,8 +27,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     RouterModule,
     AppRoutingModule,
     AngularFirestoreModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
+    ReactiveFormsModule,
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firebase)
     
   ],
   declarations: [
