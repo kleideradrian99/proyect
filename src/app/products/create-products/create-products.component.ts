@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductsService } from 'app/services/products.service';
+import { Router } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'create-products',
@@ -11,13 +13,13 @@ export class CreateProductsComponent implements OnInit {
   createProducto: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private _productoService: ProductsService,
+              private router: Router) {
     this.createProducto = this.fb.group({
       nombre: ['', Validators.required],
       precio: ['', Validators.required],
       talla: ['', Validators.required],
-      categoria: ['', Validators.required],
-      descripcion: ['', Validators.required]
+      categoria: ['', Validators.required]
     })
   }
 
@@ -28,7 +30,6 @@ export class CreateProductsComponent implements OnInit {
     if (this.createProducto.invalid) {
       this.showNotification('bottom', 'right', '4', 'Error al agregar el producto, faltan campos por llenar');
     } else {
-      this.showNotification('bottom', 'right', '2', 'Producto agregado exitosamente');
       const product: any = {
         nombre: this.createProducto.value.nombre,
         precio: this.createProducto.value.precio,
@@ -38,7 +39,12 @@ export class CreateProductsComponent implements OnInit {
         fechaCreacion: new Date(),
         fechaActualizacion: new Date()
       }
-      console.log(product);
+      this._productoService.agregarProducto(product).then(() => {
+        this.showNotification('bottom', 'right', '2', 'Producto agregado exitosamente');
+        this.router.navigate(['/product-list']);
+      }).catch(error =>{
+        this.showNotification('bottom', 'right', '4', 'Error al agregar el producto');
+      })
     }
 
   }
