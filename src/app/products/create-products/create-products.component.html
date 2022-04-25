@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header card-header-danger">
                 <h4 class="card-title">Agrega Nuevo Producto
-                    <div class="spinner-border text-light"  role="status">
+                    <div *ngIf="loading" class="spinner-border text-light"  role="status">
                         <span class="visually-hidden"></span>
                     </div>
                 </h4>
