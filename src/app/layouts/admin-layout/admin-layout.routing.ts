@@ -58,6 +58,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'product-list',   component: ListProductsComponent },
     { path: 'create-product',   component: CreateProductsComponent },
+    { path: 'editProducto/:id',   component: CreateProductsComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },

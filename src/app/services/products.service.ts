@@ -23,6 +23,14 @@ export class ProductsService {
     return this.firestore.collection('productos').doc(id).delete();
   }
 
+  getProducto(id: string): Observable<any>{
+    return this.firestore.collection('productos').doc(id).snapshotChanges();
+  }
+
+  actualizarProducto(id: string, data: any): Promise<any>{
+    return this.firestore.collection('productos').doc(id).update(data);
+  }
+
   showNotification(from, align, numberType, newMessage) {
     const type = ['', 'info', 'success', 'warning', 'danger'];
 

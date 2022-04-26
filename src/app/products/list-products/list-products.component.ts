@@ -30,7 +30,6 @@ export class ListProductsComponent implements OnInit {
           ...element.payload.doc.data()
         })
       });
-      console.log(this.productos);
     });
   }
 

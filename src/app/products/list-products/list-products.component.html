@@ -50,7 +50,7 @@
                                                 {{ producto.descripcion }}
                                             </td>
                                             <td class="text-primary">
-                                                <img src="https://incontactostorageprod.blob.core.windows.net/subirm/16504985398181650498539818.png" style="width: 25px;margin-right: 1rem;" alt="">
+                                                <img [routerLink]="['/editProducto/', producto.id]" src="https://incontactostorageprod.blob.core.windows.net/subirm/16504985398181650498539818.png" style="width: 25px;margin-right: 1rem;" alt="">
                                                 <img (click)="eliminarProducto(producto.id)" src="https://incontactostorageprod.blob.core.windows.net/subirm/16504986570091650498657009.png" style="width: 25px;" alt="">
                                             </td>
                                         </tr>
