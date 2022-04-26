@@ -12,5 +12,6 @@ export const environment = {
     authDomain: 'medellin-store.firebaseapp.com',
     messagingSenderId: '497448462970',
   },
-  production: false
+  production: false,
+  baseUrlimg:"https://firebasestorage.googleapis.com/v0/b/medellin-store.appspot.com/o/"
 };

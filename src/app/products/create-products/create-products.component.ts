@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from 'app/services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'environments/environment';
+
 declare var $: any;
 @Component({
   selector: 'create-products',
@@ -26,7 +28,6 @@ export class CreateProductsComponent implements OnInit {
       descripcion: ['', Validators.required]
     })
     this.id = this.aRouter.snapshot.paramMap.get('id');
-    console.log(this.id);
   }
 
   ngOnInit(): void {
@@ -53,6 +54,7 @@ export class CreateProductsComponent implements OnInit {
       talla: this.createProducto.value.talla,
       categoria: this.createProducto.value.categoria,
       descripcion: this.createProducto.value.descripcion,
+      url_imagen: this.urlImages,
       fechaCreacion: new Date(),
       fechaActualizacion: new Date()
     }
@@ -74,8 +76,10 @@ export class CreateProductsComponent implements OnInit {
       talla: this.createProducto.value.talla,
       categoria: this.createProducto.value.categoria,
       descripcion: this.createProducto.value.descripcion,
+      url_imagen: this.urlImages,
       fechaActualizacion: new Date()
     }
+
     this.loading = true;
     this._productoService.actualizarProducto(this.id, product).then(() => {
       this._productoService.showNotification('bottom', 'right', '1', 'Se actualizo el producto correctamente');
@@ -96,8 +100,27 @@ export class CreateProductsComponent implements OnInit {
           precio: data.payload.data()['precio'],
           talla: data.payload.data()['talla'],
           categoria: data.payload.data()['categoria'],
+          url_imagen: data.payload.data()['url_imagen'],
           descripcion: data.payload.data()['descripcion']
         })
+      })
+    }
+  }
+
+  imagen: any[] = [];
+  urlImages = environment.baseUrlimg;
+  cargarImagen(event: any) {
+    let archivo: File = event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(archivo);
+    reader.onloadend = () => {
+      // console.log(reader.result)
+      this.imagen.push(reader.result)
+      this._productoService.subirImagen(archivo.name, archivo).then(urlImagen => {
+        this.urlImages = urlImagen;
+        // this.urlImages += "products/" + archivo.name
+        console.log(urlImagen)
+
       })
     }
   }
