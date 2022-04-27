@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from 'app/services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'environments/environment';
@@ -17,20 +17,24 @@ export class CreateProductsComponent implements OnInit {
   id: string | null;
   titulo = 'Agregar Empleado';
   tituloButton = 'Agregar';
+  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
   constructor(private fb: FormBuilder, private _productoService: ProductsService,
     private router: Router, private aRouter: ActivatedRoute) {
+  
+    this.id = this.aRouter.snapshot.paramMap.get('id');
+  }
+
+  ngOnInit(): void {
+
     this.createProducto = this.fb.group({
       nombre: ['', Validators.required],
       precio: ['', Validators.required],
       talla: ['', Validators.required],
       categoria: ['', Validators.required],
-      descripcion: ['', Validators.required]
+      descripcion: ['']
     })
-    this.id = this.aRouter.snapshot.paramMap.get('id');
-  }
 
-  ngOnInit(): void {
     this.esEditar();
   }
 
@@ -95,12 +99,12 @@ export class CreateProductsComponent implements OnInit {
       this.titulo = 'Editar Empleado';
       this.tituloButton = 'Actualizar';
       this._productoService.getProducto(this.id).subscribe(data => {
+        this.urlImages = data.payload.data()['url_imagen'];
         this.createProducto.setValue({
           nombre: data.payload.data()['nombre'],
           precio: data.payload.data()['precio'],
           talla: data.payload.data()['talla'],
           categoria: data.payload.data()['categoria'],
-          url_imagen: data.payload.data()['url_imagen'],
           descripcion: data.payload.data()['descripcion']
         })
       })

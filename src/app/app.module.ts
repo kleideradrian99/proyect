@@ -17,6 +17,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 
+import {MatSelectModule} from '@angular/material/select';
+
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -30,7 +33,8 @@ import { AngularFireModule } from '@angular/fire/compat';
     ReactiveFormsModule,
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideFirestore(() => getFirestore()),
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    MatSelectModule
     
   ],
   declarations: [
