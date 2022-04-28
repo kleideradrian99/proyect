@@ -6,7 +6,6 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ListEmployeeComponent } from '../list-employee/list-employee.component';
-import { CreateEmployeeComponent } from "../create-employee/CreateEmployeeComponent";
 
 @NgModule({
   imports: [
@@ -18,7 +17,6 @@ import { CreateEmployeeComponent } from "../create-employee/CreateEmployeeCompon
     NavbarComponent,
     SidebarComponent,
     ListEmployeeComponent,
-    CreateEmployeeComponent,
   ],
   exports: [
     FooterComponent,

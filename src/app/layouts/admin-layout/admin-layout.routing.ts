@@ -8,7 +8,6 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-import { CreateEmployeeComponent } from '../../create-employee/CreateEmployeeComponent';
 import { ListProductsComponent } from 'app/products/list-products/list-products.component';
 import { CreateProductsComponent } from 'app/products/create-products/create-products.component';
 
@@ -62,7 +61,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },
-    { path: 'create-employee',     component: CreateEmployeeComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
