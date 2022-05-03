@@ -18,6 +18,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 
 import {MatSelectModule} from '@angular/material/select';
+import { ListCategoryComponent } from './category/list-category/list-category.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {MatSelectModule} from '@angular/material/select';
     AdminLayoutComponent,
     ListProductsComponent,
     CreateProductsComponent,
+    ListCategoryComponent,
 
   ],
   providers: [],

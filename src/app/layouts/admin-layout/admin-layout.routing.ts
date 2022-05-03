@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ListProductsComponent } from 'app/products/list-products/list-products.component';
 import { CreateProductsComponent } from 'app/products/create-products/create-products.component';
+import { ListCategoryComponent } from 'app/category/list-category/list-category.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -58,6 +59,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'product-list',   component: ListProductsComponent },
     { path: 'create-product',   component: CreateProductsComponent },
     { path: 'editProducto/:id',   component: CreateProductsComponent },
+    { path: 'category-list',   component: ListCategoryComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },
