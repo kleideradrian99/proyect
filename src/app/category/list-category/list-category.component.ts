@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'app/services/products.service';
 
 @Component({
   selector: 'list-category',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCategoryComponent implements OnInit {
 
-  constructor() { }
+  toppingList: string[] = ['Jeans', 'Pantalones', 'Zapatos', 'Esterisos', 'Accesorio', 'Busos'];
+
+  constructor(private _productoService: ProductsService) { }
 
   ngOnInit(): void {
   }
