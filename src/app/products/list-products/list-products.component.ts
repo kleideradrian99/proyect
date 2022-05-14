@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { PageEvent } from '@angular/material/paginator';
 import { ProductsService } from 'app/services/products.service';
 import { Observable } from 'rxjs';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'list-products',
@@ -11,6 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class ListProductsComponent implements OnInit {
   productos: any[] = [];
+  public search: string = '';
+  // dataSource: any;
 
   constructor(private _productoService: ProductsService) {
 
@@ -24,6 +27,7 @@ export class ListProductsComponent implements OnInit {
     this._productoService.getProductos().subscribe(data => {
       this.productos = [];
       data.forEach((element: any) => {
+        // this.dataSource = new MatTableDataSource(element.payload.doc.data());
         // console.log(element.payload.doc.id);
         // console.log(element.payload.doc.data());
         this.productos.push({
@@ -50,5 +54,9 @@ export class ListProductsComponent implements OnInit {
   cambiarPagina(e: PageEvent) {
     this.desde = e.pageIndex * e.pageSize;
     this.hasta = this.desde + e.pageSize;
+  }
+
+  onSearchProduct(filterValue: string) {
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
