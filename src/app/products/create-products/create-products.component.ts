@@ -40,7 +40,7 @@ export class CreateProductsComponent implements OnInit {
 
   agregarEditarProducto() {
     if (this.createProducto.invalid) {
-      this._productoService.showNotification('bottom', 'right', '4', 'Error al agregar el producto, faltan campos por llenar');
+      this._productoService.showNotification('bottom', 'right', '3', 'Error al agregar el producto, faltan campos por llenar');
       return;
     }
 
@@ -68,7 +68,7 @@ export class CreateProductsComponent implements OnInit {
       this.router.navigate(['/product-list']);
       this.loading = false;
     }).catch(error => {
-      this._productoService.showNotification('bottom', 'right', '4', 'Error al agregar el producto');
+      this._productoService.showNotification('bottom', 'right', '3', 'Error al agregar el producto');
       console.log(error);
     })
   }

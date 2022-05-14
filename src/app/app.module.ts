@@ -19,12 +19,13 @@ import { AngularFireModule } from '@angular/fire/compat';
 
 import {MatSelectModule} from '@angular/material/select';
 import { ListCategoryComponent } from './category/list-category/list-category.component';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     FormsModule,
+    MatPaginatorModule,
     ReactiveFormsModule,
     HttpClientModule,
     ComponentsModule,
