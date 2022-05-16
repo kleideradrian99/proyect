@@ -20,6 +20,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import {MatSelectModule} from '@angular/material/select';
 import { ListCategoryComponent } from './category/list-category/list-category.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { FilterProductsPipe } from './products/list-products/filter-products.pipe';
 
 @NgModule({
   imports: [
@@ -45,9 +46,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ListProductsComponent,
     CreateProductsComponent,
     ListCategoryComponent,
+    FilterProductsPipe,
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[FilterProductsPipe]
 })
 export class AppModule { }

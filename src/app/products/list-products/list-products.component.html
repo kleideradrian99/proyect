@@ -6,7 +6,7 @@
             </div>
             <div class="card-body">
                 <div class="col-md-12">
-                    <input (keyup)="onSearchProduct($event.target.value)" matInput class="form-control"
+                    <input [(ngModel)]="filterValue" matInput class="form-control"
                         style="display: initial;width: auto;" type="text" placeholder="Buscar producto">
                     <button class="btn btn-primary btn-lg float-right" style="padding: 1rem;"
                         routerLink="/create-product">Agregar</button>
@@ -36,7 +36,7 @@
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let producto of productos | slice:desde:hasta ">
+                                        <tr *ngFor="let producto of productos| filterProducts: filterValue  | slice:desde:hasta  ">
                                             <td>
                                                 {{ producto.nombre }}
                                             </td>

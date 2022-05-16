@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { PageEvent } from '@angular/material/paginator';
 import { ProductsService } from 'app/services/products.service';
 import { Observable } from 'rxjs';
-import { MatTableDataSource } from '@angular/material/table';
+
 
 @Component({
   selector: 'list-products',
@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ListProductsComponent implements OnInit {
   productos: any[] = [];
   public search: string = '';
-  // dataSource: any;
+  filterValue:string= "";
 
   constructor(private _productoService: ProductsService) {
 
@@ -27,7 +27,6 @@ export class ListProductsComponent implements OnInit {
     this._productoService.getProductos().subscribe(data => {
       this.productos = [];
       data.forEach((element: any) => {
-        // this.dataSource = new MatTableDataSource(element.payload.doc.data());
         // console.log(element.payload.doc.id);
         // console.log(element.payload.doc.data());
         this.productos.push({
@@ -40,7 +39,7 @@ export class ListProductsComponent implements OnInit {
 
   eliminarProducto(id: string) {
     this._productoService.eliminarProducto(id).then(() => {
-      // console.log('Producto eliminado');
+      console.log('Producto eliminado');
       this._productoService.showNotification('bottom', 'right', '3', 'Producto Eliminado Correctamente');
     }).catch(error => {
       console.log(error);
@@ -56,7 +55,4 @@ export class ListProductsComponent implements OnInit {
     this.hasta = this.desde + e.pageSize;
   }
 
-  onSearchProduct(filterValue: string) {
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
 }
