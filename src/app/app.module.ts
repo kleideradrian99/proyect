@@ -13,6 +13,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 
 // Seleccion Multiple
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 // Modulos Firebase
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
@@ -43,7 +44,8 @@ import { MatTableModule } from '@angular/material/table';
     // provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    NgMultiSelectDropDownModule.forRoot()
     
   ],
   declarations: [
