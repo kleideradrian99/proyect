@@ -12,6 +12,8 @@ import { CreateProductsComponent } from './products/create-products/create-produ
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 
+// Seleccion Multiple
+
 // Modulos Firebase
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';

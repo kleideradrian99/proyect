@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ProductsService } from 'app/services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'environments/environment';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
 declare var $: any;
 @Component({
@@ -11,6 +12,11 @@ declare var $: any;
   styleUrls: ['./create-products.component.css']
 })
 export class CreateProductsComponent implements OnInit {
+
+  // VariablesSelect
+  dropdownList = [];
+  selectedItems = [];
+  dropdownSettings = {};
 
   createProducto: FormGroup;
   loading = false;
