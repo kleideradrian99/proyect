@@ -44,9 +44,7 @@ import { MatTableModule } from '@angular/material/table';
     // provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     MatSelectModule,
-    MatTableModule,
-    NgMultiSelectDropDownModule.forRoot()
-    
+    MatTableModule
   ],
   declarations: [
     AppComponent,

@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ProductsService } from 'app/services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'environments/environment';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
 declare var $: any;
 @Component({
@@ -13,17 +12,12 @@ declare var $: any;
 })
 export class CreateProductsComponent implements OnInit {
 
-  // VariablesSelect
-  dropdownList = [];
-  selectedItems = [];
-  dropdownSettings = {};
-
   createProducto: FormGroup;
   loading = false;
   id: string | null;
   titulo = 'Agregar Empleado';
   tituloButton = 'Agregar';
-  toppingList: string[] = ['Proveedor 1', 'Proveedor 2', 'Proveedor 3', 'Proveedor 4', 'Proveedor 5', 'Proveedor 6'];
+  toppingList: string[] = ['Proveedor 1', 'Proveedor 2', 'Proveedor 3', 'Proveedor 4', 'Proveedor 5', 'Proveedor '];
 
   constructor(private fb: FormBuilder, private _productoService: ProductsService,
     private router: Router, private aRouter: ActivatedRoute) {
