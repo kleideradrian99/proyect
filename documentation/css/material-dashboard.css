@@ -8754,7 +8754,7 @@ button:focus {
       top: 8px;
       line-height: 0; }
   .card .form-check {
-    margin-top: 15px; }
+    margin-top: 0px; }
   .card .card-title {
     margin-top: 0.625rem; }
     .card .card-title:last-child {
@@ -9335,7 +9335,6 @@ button:focus {
 
 .form-check .form-check-label {
   cursor: pointer;
-  padding-left: 25px;
   position: relative; }
   .form-group.is-focused .form-check .form-check-label {
     color: rgba(0,0,0, 0.26); }
@@ -9345,7 +9344,7 @@ button:focus {
       color: rgba(0,0,0, 0.26); }
   .form-check .form-check-label span {
     display: block;
-    position: absolute;
+    position: inherit;
     left: -1px;
     top: -1px;
     -webkit-transition-duration: 0.2s;

@@ -11,6 +11,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ListProductsComponent } from 'app/products/list-products/list-products.component';
 import { CreateProductsComponent } from 'app/products/create-products/create-products.component';
 import { ListCategoryComponent } from 'app/category/list-category/list-category.component';
+import { ListOrdersComponent } from 'app/orders/list-orders/list-orders.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -60,6 +61,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'create-product',   component: CreateProductsComponent },
     { path: 'editProducto/:id',   component: CreateProductsComponent },
     { path: 'category-list',   component: ListCategoryComponent },
+    { path: 'orders-list',   component:  ListOrdersComponent},
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     // { path: 'typography',     component: TypographyComponent },

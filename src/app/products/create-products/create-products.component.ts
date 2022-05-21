@@ -17,7 +17,7 @@ export class CreateProductsComponent implements OnInit {
   id: string | null;
   titulo = 'Agregar Empleado';
   tituloButton = 'Agregar';
-  toppingList: string[] = ['Jeans', 'Pantalones', 'Zapatos', 'Esterisos', 'Accesorio', 'Busos'];
+  toppingList: string[] = ['Proveedor 1', 'Proveedor 2', 'Proveedor 3', 'Proveedor 4', 'Proveedor 5', 'Proveedor 6'];
 
   constructor(private fb: FormBuilder, private _productoService: ProductsService,
     private router: Router, private aRouter: ActivatedRoute) {

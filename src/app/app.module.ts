@@ -21,6 +21,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { ListCategoryComponent } from './category/list-category/list-category.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { FilterProductsPipe } from './products/list-products/filter-products.pipe';
+import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
+import { CreateOrdersComponent } from './orders/create-orders/create-orders.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -37,7 +40,8 @@ import { FilterProductsPipe } from './products/list-products/filter-products.pip
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
     
   ],
   declarations: [
@@ -47,6 +51,8 @@ import { FilterProductsPipe } from './products/list-products/filter-products.pip
     CreateProductsComponent,
     ListCategoryComponent,
     FilterProductsPipe,
+    ListOrdersComponent,
+    CreateOrdersComponent,
 
   ],
   providers: [],
