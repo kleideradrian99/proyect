@@ -17,21 +17,30 @@ export class CreateProductsComponent implements OnInit {
   id: string | null;
   titulo = 'Agregar Empleado';
   tituloButton = 'Agregar';
+  toppings = new FormControl();
+  toppingListTallas: string[] = ['10', '12', '14', 'S', 'M', 'L', 'XL', 'XXL'];
   toppingList: string[] = ['Proveedor 1', 'Proveedor 2', 'Proveedor 3', 'Proveedor 4', 'Proveedor 5', 'Proveedor '];
+
+
 
   constructor(private fb: FormBuilder, private _productoService: ProductsService,
     private router: Router, private aRouter: ActivatedRoute) {
-  
+
     this.id = this.aRouter.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
 
     this.createProducto = this.fb.group({
+      referencia: ['', Validators.required],
       nombre: ['', Validators.required],
-      precio: ['', Validators.required],
-      talla: ['', Validators.required],
-      categoria: ['', Validators.required],
+      valorEntrada: ['', Validators.required],
+      precioUSD: ['', Validators.required],
+      valorSalida: ['', Validators.required],
+      proveedor: ['', Validators.required],
+      // tallas: ['', Validators.required],
+      publicForm: [''],
+      coleccion: [''],
       descripcion: ['']
     })
 

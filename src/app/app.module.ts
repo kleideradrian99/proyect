@@ -9,20 +9,17 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ListProductsComponent } from './products/list-products/list-products.component';
 import { CreateProductsComponent } from './products/create-products/create-products.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 
-// Seleccion Multiple
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-
 // Modulos Firebase
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { ListCategoryComponent } from './category/list-category/list-category.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { FilterProductsPipe } from './products/list-products/filter-products.pipe';
 import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
 import { CreateOrdersComponent } from './orders/create-orders/create-orders.component';
@@ -59,6 +56,6 @@ import { MatTableModule } from '@angular/material/table';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports:[FilterProductsPipe]
+  exports: [FilterProductsPipe]
 })
 export class AppModule { }
