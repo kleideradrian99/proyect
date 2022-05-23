@@ -16,14 +16,14 @@ import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
-
 import { MatSelectModule } from '@angular/material/select';
-import { ListCategoryComponent } from './category/list-category/list-category.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FilterProductsPipe } from './products/list-products/filter-products.pipe';
 import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
 import { CreateOrdersComponent } from './orders/create-orders/create-orders.component';
 import { MatTableModule } from '@angular/material/table';
+import { CreateProveedorComponent } from './proveedors/create-proveedor/create-proveedor.component';
+import { ListProveedorComponent } from './proveedors/list-proveedor/list-proveedor.component';
 
 @NgModule({
   imports: [
@@ -48,10 +48,11 @@ import { MatTableModule } from '@angular/material/table';
     AdminLayoutComponent,
     ListProductsComponent,
     CreateProductsComponent,
-    ListCategoryComponent,
     FilterProductsPipe,
     ListOrdersComponent,
     CreateOrdersComponent,
+    CreateProveedorComponent,
+    ListProveedorComponent,
 
   ],
   providers: [],
