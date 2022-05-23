@@ -62,11 +62,15 @@ export class CreateProductsComponent implements OnInit {
 
   agregarProducto() {
     const product: any = {
+      referencia: this.createProducto.value.referencia,
       nombre: this.createProducto.value.nombre,
-      precio: this.createProducto.value.precio,
-      talla: this.createProducto.value.talla,
-      categoria: this.createProducto.value.categoria,
-      descripcion: this.createProducto.value.descripcion,
+      valorEntrada: this.createProducto.value.valorEntrada,
+      precioUSD: this.createProducto.value.precioUSD,
+      valorSalida: this.createProducto.value.valorSalida,
+      proveedor: this.createProducto.value.proveedor,
+      // talla: this.createProducto.value.talla,
+      publicForm: this.createProducto.value.publicForm,
+      coleccion: this.createProducto.value.coleccion,
       url_imagen: this.urlImages,
       fechaCreacion: new Date(),
       fechaActualizacion: new Date()
@@ -84,15 +88,18 @@ export class CreateProductsComponent implements OnInit {
 
   EditarProducto(id: string) {
     const product: any = {
+      referencia: this.createProducto.value.referencia,
       nombre: this.createProducto.value.nombre,
-      precio: this.createProducto.value.precio,
-      talla: this.createProducto.value.talla,
-      categoria: this.createProducto.value.categoria,
-      descripcion: this.createProducto.value.descripcion,
+      valorEntrada: this.createProducto.value.valorEntrada,
+      precioUSD: this.createProducto.value.precioUSD,
+      valorSalida: this.createProducto.value.valorSalida,
+      proveedor: this.createProducto.value.proveedor,
+      // tala: this.createProducto.value.talla,
+      publicForm: this.createProducto.value.publicForm,
+      coleccion: this.createProducto.value.coleccion,
       url_imagen: this.urlImages,
       fechaActualizacion: new Date()
     }
-
     this.loading = true;
     this._productoService.actualizarProducto(this.id, product).then(() => {
       this._productoService.showNotification('bottom', 'right', '1', 'Se actualizo el producto correctamente');
@@ -110,13 +117,19 @@ export class CreateProductsComponent implements OnInit {
       this._productoService.getProducto(this.id).subscribe(data => {
         this.urlImages = data.payload.data()['url_imagen'];
         this.createProducto.setValue({
+          referencia: data.payload.data()['referencia'],
           nombre: data.payload.data()['nombre'],
-          precio: data.payload.data()['precio'],
-          talla: data.payload.data()['talla'],
-          categoria: data.payload.data()['categoria'],
-          descripcion: data.payload.data()['descripcion']
+          valorEntrada: data.payload.data()['valorEntrada'],
+          precioUSD: data.payload.data()['precioUSD'],
+          valorSalida: data.payload.data()['valorSalida'],
+          proveedor: data.payload.data()['proveedor'],
+          // talla: data.payload.data()['talla'],
+          publicForm: data.payload.data()['publicForm'],
+          coleccion: data.payload.data()['coleccion']
         })
+        console.log(this.createProducto);
       })
+
     }
   }
 
