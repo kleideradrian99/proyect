@@ -36,7 +36,8 @@
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let proveedor of proveedors | filterProveedor: filterValue | slice:desde:hasta">
+                                        <tr
+                                            *ngFor="let proveedor of proveedors | filterProveedor: filterValue | slice:desde:hasta">
                                             <td>
                                                 {{ proveedor.nombreContacto }}
                                             </td>
@@ -54,19 +55,19 @@
                                             </td>
 
                                             <td class="text-primary">
-                                                <!-- <img [routerLink]="['/editProducto/', producto.id]"
+                                                <img [routerLink]="['/editProveedor/', proveedor.id]"
                                                     src="https://incontactostorageprod.blob.core.windows.net/subirm/16504985398181650498539818.png"
-                                                    style="width: 25px;margin-right: 1rem;" alt="">
-                                                <img (click)="eliminarProducto(producto.id)"
+                                                    style="width: 25px;margin-right: 1rem;" alt="logo">
+                                                <img (click)="eliminarProducto(proveedor.id)"
                                                     src="https://incontactostorageprod.blob.core.windows.net/subirm/16504986570091650498657009.png"
-                                                    style="width: 25px;" alt=""> -->
+                                                    style="width: 25px;" alt="">
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <!-- <mat-paginator [length]="productos.length" [pageSize]="pageSize"
+                                <mat-paginator [length]="proveedors.length" [pageSize]="pageSize"
                                     (page)="cambiarPagina($event)">
-                                </mat-paginator> -->
+                                </mat-paginator>
                             </div>
                         </div>
                     </div>

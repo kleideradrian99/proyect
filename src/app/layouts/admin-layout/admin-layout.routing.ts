@@ -63,6 +63,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'editProducto/:id', component: CreateProductsComponent },
     { path: 'list-proveedor', component: ListProveedorComponent },
     { path: 'create-proveedor', component: CreateProveedorComponent },
+    { path: 'editProveedor/:id', component: CreateProveedorComponent },
     { path: 'orders-list', component: ListOrdersComponent },
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'table-list', component: TableListComponent },

@@ -28,6 +28,7 @@ export class CreateProveedorComponent implements OnInit {
       email: ['', Validators.required],
       telefono: ['', Validators.required]
     })
+    this.esEditar();
   }
 
   agregarEditarProveedor() {
@@ -39,7 +40,7 @@ export class CreateProveedorComponent implements OnInit {
     if (this.id === null) {
       this.agregarProveedor();
     } else {
-      // Editar
+      this.EditarProveedor(this.id);
     }
   }
 
@@ -58,6 +59,39 @@ export class CreateProveedorComponent implements OnInit {
       console.log("Error al imprimir");
       console.log(error);
     })
+  }
+
+  EditarProveedor(id: string) {
+    const proveedor: any = {
+      nombreContacto: this.createProveedor.value.nombreContacto,
+      empresa: this.createProveedor.value.empresa,
+      ciudad: this.createProveedor.value.ciudad,
+      email: this.createProveedor.value.email,
+      telefono: this.createProveedor.value.telefono
+    }
+    this._proveedorService.actualizarProveedor(this.id, proveedor).then(() => {
+      console.log('Se actualizo el proveedor');
+      this.router.navigate(['/list-proveedor']);
+    }).catch(error => {
+      console.log(error);
+    })
+  }
+
+  esEditar() {
+    if (this.id !== null) {
+      this.tituloButton = 'Actualizar';
+      this._proveedorService.getProveedor(this.id).subscribe(data => {
+        this.createProveedor.setValue({
+          nombreContacto: data.payload.data()['nombreContacto'],
+          empresa: data.payload.data()['empresa'],
+          ciudad: data.payload.data()['ciudad'],
+          email: data.payload.data()['email'],
+          telefono: data.payload.data()['telefono']
+        })
+        console.log(this.createProveedor);
+      })
+
+    }
   }
 
 }
