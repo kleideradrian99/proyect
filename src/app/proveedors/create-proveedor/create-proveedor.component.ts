@@ -13,6 +13,7 @@ export class CreateProveedorComponent implements OnInit {
 
   createProveedor: FormGroup;
   id: string | null;
+  tituloButton = 'Agregar';
 
   constructor(private fb: FormBuilder, private _proveedorService: ProveedorsService,
     private router: Router, private aRouter: ActivatedRoute) {
@@ -29,7 +30,7 @@ export class CreateProveedorComponent implements OnInit {
     })
   }
 
-  agregarEditarProducto() {
+  agregarEditarProveedor() {
     if (this.createProveedor.invalid) {
       console.log('Faltan Campos por lllenas');
       return;
@@ -48,7 +49,7 @@ export class CreateProveedorComponent implements OnInit {
       empresa: this.createProveedor.value.empresa,
       ciudad: this.createProveedor.value.ciudad,
       email: this.createProveedor.value.email,
-      telefono: this.createProveedor.value
+      telefono: this.createProveedor.value.telefono
     }
     this._proveedorService.agregarProveedor(proveedor).then(() => {
       console.log('Proveedor agregado correctamente');
