@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { PageEvent } from '@angular/material/paginator';
+import { GeneralService } from 'app/services/general.service';
 import { ProductsService } from 'app/services/products.service';
 import { Observable } from 'rxjs';
 
@@ -15,7 +16,7 @@ export class ListProductsComponent implements OnInit {
   public search: string = '';
   filterValue: string = "";
 
-  constructor(private _productoService: ProductsService) {
+  constructor(private _productoService: ProductsService, private _generalService: GeneralService) {
 
   }
 
@@ -40,7 +41,7 @@ export class ListProductsComponent implements OnInit {
   eliminarProducto(id: string) {
     this._productoService.eliminarProducto(id).then(() => {
       console.log('Producto eliminado');
-      this._productoService.showNotification('bottom', 'right', '3', 'Producto Eliminado Correctamente');
+      this._generalService.showNotification('bottom', 'right', '3', 'Producto Eliminado Correctamente');
     }).catch(error => {
       console.log(error);
     })

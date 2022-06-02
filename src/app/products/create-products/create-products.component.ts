@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ProductsService } from 'app/services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'environments/environment';
+import { GeneralService } from 'app/services/general.service';
 
 declare var $: any;
 @Component({
@@ -23,7 +24,7 @@ export class CreateProductsComponent implements OnInit {
 
 
 
-  constructor(private fb: FormBuilder, private _productoService: ProductsService,
+  constructor(private fb: FormBuilder, private _generalService: GeneralService, private _productoService: ProductsService,
     private router: Router, private aRouter: ActivatedRoute) {
 
     this.id = this.aRouter.snapshot.paramMap.get('id');
@@ -49,7 +50,7 @@ export class CreateProductsComponent implements OnInit {
 
   agregarEditarProducto() {
     if (this.createProducto.invalid) {
-      this._productoService.showNotification('bottom', 'right', '3', 'Error al agregar el producto, faltan campos por llenar');
+      this._generalService.showNotification('bottom', 'right', '3', 'Error al agregar el producto, faltan campos por llenar');
       return;
     }
 
@@ -77,11 +78,11 @@ export class CreateProductsComponent implements OnInit {
     }
     this.loading = true;
     this._productoService.agregarProducto(product).then(() => {
-      this._productoService.showNotification('bottom', 'right', '2', 'Producto agregado exitosamente');
+      this._generalService.showNotification('bottom', 'right', '2', 'Producto agregado exitosamente');
       this.router.navigate(['/product-list']);
       this.loading = false;
     }).catch(error => {
-      this._productoService.showNotification('bottom', 'right', '3', 'Error al agregar el producto');
+      this._generalService.showNotification('bottom', 'right', '3', 'Error al agregar el producto');
       console.log(error);
     })
   }
@@ -102,7 +103,7 @@ export class CreateProductsComponent implements OnInit {
     }
     this.loading = true;
     this._productoService.actualizarProducto(this.id, product).then(() => {
-      this._productoService.showNotification('bottom', 'right', '1', 'Se actualizo el producto correctamente');
+      this._generalService.showNotification('bottom', 'right', '1', 'Se actualizo el producto correctamente');
       this.router.navigate(['/product-list']);
       this.loading = false;
     }).catch(error => {
@@ -145,8 +146,6 @@ export class CreateProductsComponent implements OnInit {
       this._productoService.subirImagen(archivo.name, archivo).then(urlImagen => {
         this.urlImages = urlImagen;
         // this.urlImages += "products/" + archivo.name
-        console.log(urlImagen)
-
       })
     }
   }

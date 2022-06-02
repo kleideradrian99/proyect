@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { element } from 'protractor';
 import { PageEvent } from '@angular/material/paginator';
 import { ProveedorsService } from '../proveedors.service';
+import { GeneralService } from 'app/services/general.service';
 
 @Component({
   selector: 'list-proveedor',
@@ -14,7 +15,7 @@ export class ListProveedorComponent implements OnInit {
   public search: string = '';
   filterValue: string = "";
 
-  constructor(private _proveedorService: ProveedorsService) { }
+  constructor(private _proveedorService: ProveedorsService, private _generalService: GeneralService) { }
 
   ngOnInit(): void {
     this.getProveedor();
@@ -34,7 +35,7 @@ export class ListProveedorComponent implements OnInit {
 
   eliminarProveedor(id: string) {
     this._proveedorService.eliminarProveedor(id).then(() => {
-      console.log('Proveedor Eliminado');
+      this._generalService.showNotification('bottom', 'right', '3', 'Proveedor Eliminado Correctamente');
     }).catch(error => {
       console.log(error);
     })
