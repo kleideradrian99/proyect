@@ -45,8 +45,7 @@
                                         </th>
                                     </thead>
                                     <tbody>
-                                        <tr
-                                            *ngFor="let producto of productos| filterProducts: filterValue  | slice:desde:hasta  ">
+                                        <tr *ngFor="let producto of productos| filterProducts: filterValue  | slice:desde:hasta  ">
                                             <td>
                                                 {{ producto.referencia }}
                                             </td>

@@ -13,14 +13,14 @@ import { Observable } from 'rxjs';
 export class ListProductsComponent implements OnInit {
   productos: any[] = [];
   public search: string = '';
-  filterValue:string= "";
+  filterValue: string = "";
 
   constructor(private _productoService: ProductsService) {
 
   }
 
   ngOnInit(): void {
-    this.getProductos()
+    this.getProductos();
   }
 
   getProductos() {
