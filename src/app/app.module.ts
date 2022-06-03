@@ -25,6 +25,8 @@ import { MatTableModule } from '@angular/material/table';
 import { CreateProveedorComponent } from './proveedors/create-proveedor/create-proveedor.component';
 import { ListProveedorComponent } from './proveedors/list-proveedor/list-proveedor.component';
 import { FilterProveedorPipe } from './proveedors/list-proveedor/filter-proveedor.pipe';
+import { ListClientsComponent } from './clients/list-clients/list-clients.component';
+import { CreateClientsComponent } from './clients/create-clients/create-clients.component';
 
 @NgModule({
   imports: [
@@ -55,6 +57,8 @@ import { FilterProveedorPipe } from './proveedors/list-proveedor/filter-proveedo
     CreateOrdersComponent,
     CreateProveedorComponent,
     ListProveedorComponent,
+    ListClientsComponent,
+    CreateClientsComponent,
 
   ],
   providers: [],

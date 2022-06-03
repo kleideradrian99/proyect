@@ -13,6 +13,8 @@ import { CreateProductsComponent } from 'app/products/create-products/create-pro
 import { ListOrdersComponent } from 'app/orders/list-orders/list-orders.component';
 import { ListProveedorComponent } from 'app/proveedors/list-proveedor/list-proveedor.component';
 import { CreateProveedorComponent } from 'app/proveedors/create-proveedor/create-proveedor.component';
+import { CreateClientsComponent } from 'app/clients/create-clients/create-clients.component';
+import { ListClientsComponent } from 'app/clients/list-clients/list-clients.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -64,6 +66,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'list-proveedor', component: ListProveedorComponent },
     { path: 'create-proveedor', component: CreateProveedorComponent },
     { path: 'editProveedor/:id', component: CreateProveedorComponent },
+    { path: 'list-clients', component: ListClientsComponent },
+    { path: 'create-client', component: CreateClientsComponent },
+    { path: 'editClient/:id', component: CreateProveedorComponent },
+    
     { path: 'orders-list', component: ListOrdersComponent },
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'table-list', component: TableListComponent },
