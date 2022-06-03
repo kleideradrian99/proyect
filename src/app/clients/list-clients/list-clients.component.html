@@ -1,1 +1,77 @@
-<p>list-clients works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Listado de Clientes</h4>
+            </div>
+            <div class="card-body">
+                <div class="col-md-12">
+                    <!-- <input [(ngModel)]="filterValue" matInput class="form-control" style="display: initial;width: auto;"
+                        type="text" placeholder="Buscar Proveedor"> -->
+                    <button class="btn btn-primary btn-lg float-right" style="padding: 1rem;"
+                        routerLink="/create-client">Agregar</button>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <!-- <h4 *ngIf="proveedors.length == 0">No hay datos para mostrar</h4> -->
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                        <th>
+                                            Nombre
+                                        </th>
+                                        <th>
+                                            Celular
+                                        </th>
+                                        <th>
+                                            Direccion
+                                        </th>
+                                        <th>
+                                            Pais
+                                        </th>
+                                        <th>
+                                            E-mail
+                                        </th>
+                                        <th>
+                                            Opciones
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+
+                                            <td class="text-primary">
+                                                <!-- <img [routerLink]="['/editProveedor/', proveedor.id]"
+                                                    src="https://incontactostorageprod.blob.core.windows.net/subirm/16504985398181650498539818.png"
+                                                    style="width: 25px;margin-right: 1rem;" alt="logo">
+                                                <img (click)="eliminarProveedor(proveedor.id)"
+                                                    src="https://incontactostorageprod.blob.core.windows.net/subirm/16504986570091650498657009.png"
+                                                    style="width: 25px;" alt=""> -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- <mat-paginator [length]="proveedors.length" [pageSize]="pageSize"
+                                    (page)="cambiarPagina($event)">
+                                </mat-paginator> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
