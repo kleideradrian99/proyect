@@ -43,7 +43,7 @@ export class CreateProveedorComponent implements OnInit {
     if (this.id === null) {
       this.agregarProveedor();
     } else {
-      this.EditarProveedor(this.id);
+      this.editarProveedor(this.id);
     }
   }
 
@@ -66,7 +66,7 @@ export class CreateProveedorComponent implements OnInit {
     })
   }
 
-  EditarProveedor(id: string) {
+  editarProveedor(id: string) {
     const proveedor: any = {
       nombreContacto: this.createProveedor.value.nombreContacto,
       empresa: this.createProveedor.value.empresa,
@@ -87,6 +87,7 @@ export class CreateProveedorComponent implements OnInit {
   esEditar() {
     if (this.id !== null) {
       this.tituloButton = 'Actualizar';
+      this.titulo = 'Actualizar Proveedor';
       this._proveedorService.getProveedor(this.id).subscribe(data => {
         this.createProveedor.setValue({
           nombreContacto: data.payload.data()['nombreContacto'],
