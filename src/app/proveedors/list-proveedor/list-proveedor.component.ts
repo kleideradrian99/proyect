@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { element } from 'protractor';
 import { PageEvent } from '@angular/material/paginator';
 import { ProveedorsService } from '../proveedors.service';
 import { GeneralService } from 'app/services/general.service';
@@ -50,7 +49,4 @@ export class ListProveedorComponent implements OnInit {
     this.desde = e.pageIndex * e.pageSize;
     this.hasta = this.desde + e.pageSize;
   }
-
-
-
 }
